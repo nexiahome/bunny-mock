@@ -40,6 +40,10 @@ class BunnyMock
       exchange.queues << self
     end
 
+    def cancel
+      nil
+    end
+
     # Note that this doesn't block waiting for messages like the real world.
     def subscribe(*args, &block)
       while message = messages.shift
